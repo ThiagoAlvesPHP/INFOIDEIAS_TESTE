@@ -40,13 +40,6 @@ class Funcoes
 
         return $seculo;
     }
-
-    
-	
-	
-	
-	
-	
 	
 	
 	/*
@@ -62,13 +55,6 @@ class Funcoes
     public function PrimoAnterior(int $numero): int {
         
     }
-
-
-
-
-
-
-
 
 
 
@@ -89,12 +75,17 @@ class Funcoes
 
      * */
     public function SegundoMaior(array $arr): int {
+        $array = [];
+
+        foreach ($arr as $key => $value) {
+            foreach ($value as $key => $value) {
+                array_push($array, $value);
+            }
+        }
+        rsort($array);
         
+        return $array[1];
     }
-	
-	
-	
-	
 	
 	
 	
@@ -130,6 +121,18 @@ class Funcoes
      * */
     
 	public function SequenciaCrescente(array $arr): boolean {
-        
+        $res = true;
+
+        if (count($arr) > 1) {
+            foreach (array_count_values($arr) as $key => $value) {
+                if ($value > 1) {
+                    $res = false;
+                }
+            }
+        }
+
+        echo "É possivel obter uma sequência crescente? ";
+        echo ($res)?'SIM':'NÃO';
+        exit;
     }
 }
